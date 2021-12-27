@@ -1,0 +1,86 @@
+ <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <style type="text/css">
+   TABLE {
+    width: 1100px; 
+    border-collapse: collapse; 
+   }
+   TD {
+    padding: 1.5px; 
+    border: 1px solid black; 
+   }
+   .my_button {
+   	border: none;
+    color: white;
+    padding: 16px 32px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+   	background-color: white; 
+    border: 2px solid #4CAF50;
+   }
+   .my_button:hover {
+  background-color: #4CAF50;
+  
+}
+
+
+  </style>
+</head>
+<body>
+<h1>Top-40</h1>
+<button class="my_button"><%= link_to "Books", books_path %></button>
+<button class="my_button"><%= link_to "Creators", creators_path %></button>
+<button class="my_button"><%= link_to "Sellers", sellers_path %></button>
+
+<table>
+<tr>
+  
+    <td>
+      <p>Rating</p> 
+    </td>
+    <td>
+      <p>Title</p>
+    </td>
+    <td>
+      <p>Author</p>
+    </td>
+    <td>
+      <p>Vendor</p>
+    </td>
+     <td>
+      <p>Price </p>
+    </td>
+     <td>
+      <p>Description</p>
+    </td>
+</tr>  
+<% @articles.each do |article| %>
+<tr>
+    <td>
+      <%= article.book.rating %><p>&nbsp;</p>
+    </td>
+    <td>
+	      <%= link_to article.book.title, article %><p>&nbsp;</p>
+   
+    </td>
+    <td>
+      <%= article.creator.author %><p>&nbsp;</p>
+    </td>
+    <td>
+      <%= article.seller.vendor %><p>&nbsp;</p>
+    </td>
+     <td>
+      <%= article.price %><p>&nbsp;</p>
+    </td>
+     <td>
+      <%= article.description %><p>&nbsp;</p>
+    </td>
+</tr>
+  <% end %>
+
+</table>
+</body>
+

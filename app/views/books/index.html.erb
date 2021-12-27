@@ -1,0 +1,59 @@
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <style type="text/css">
+   TABLE {
+    width: 900px; 
+    border-collapse: collapse; 
+   }
+   TD {
+    padding: 1.5px; 
+    border: 1px solid black; 
+   }
+    H1{
+   	font-size: 22px;
+   	font-weight: bold;
+   }
+.my_button {
+   	border: none;
+    color: white;
+    padding: 16px 32px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+   	background-color: white; 
+    border: 2px solid #4CAF50;
+   }
+   .my_button:hover {
+  background-color: #4CAF50;
+   }
+  </style>
+</head>
+<body>
+<p>&nbsp;</p>
+<button class="my_button"><%= link_to "<-", articles_path %></button>
+<h1>Books</h1>
+<table>
+<tr>
+  
+    <td>
+      <h1>Rating</h1> 
+    </td>
+    <td>
+      <h1>Title</h1>
+    </td>
+</tr>
+<% @books.each do |book| %>
+<tr>
+    <td>
+      <%= book.rating %><p>&nbsp;</p>
+    </td>
+    <td>
+	  <%= book.title %><p>&nbsp;</p>
+    </td>
+</tr>
+  <% end %>
+
+</table>
+</body>
